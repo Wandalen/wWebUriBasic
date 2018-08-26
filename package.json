@@ -21,7 +21,8 @@
     "url": "https://github.com/Wandalen/wWebUriFundamentals/issues"
   },
   "dependencies": {
-    "wTools": ""
+    "wTools": "",
+    "wurifundamentals": ""
   },
   "devDependencies": {
     "wTesting": "",
