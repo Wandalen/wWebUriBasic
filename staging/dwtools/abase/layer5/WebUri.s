@@ -48,6 +48,18 @@ let Self = _.weburi = _.weburi || Object.create( Parent );
 //
 // --
 
+function isAbsolute( path )
+{
+  let parent = this.path;
+  _.assert( arguments.length === 1 );
+  _.assert( _.strIs( path ) );
+  if( this.isGlobal( path ) )
+  return true;
+  return parent.isAbsolute( path );
+}
+
+//
+
 let join = Parent._joining_functor( 'join', 1 );
 
 //
@@ -151,6 +163,8 @@ let Fields =
 
 let Routines =
 {
+
+  isAbsolute : isAbsolute,
 
   join : join,
   urisJoin : urisJoin,
