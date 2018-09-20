@@ -155,6 +155,7 @@ let urisResolve = _.path._pathMultiplicator_functor
 
 let Fields =
 {
+  single : Self,
 }
 
 // --
@@ -176,6 +177,8 @@ let Routines =
 
 _.mapSupplementOwn( Self, Fields );
 _.mapSupplementOwn( Self, Routines );
+
+Self.Init();
 
 // --
 // export
