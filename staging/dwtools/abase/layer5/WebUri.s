@@ -106,7 +106,7 @@ let urisJoin = _.path._pathMultiplicator_functor
 //
 //     if( !result.longPath && src.longPath !== undefined )
 //     {
-//       if( !_.strIsNotEmpty( src.longPath ) )
+//       if( !_.strDefined( src.longPath ) )
 //       src.longPath = this._rootStr;
 //
 //       result.longPath = src.longPath;
