@@ -18,8 +18,8 @@ for:
           nodejs_version: "Current"
       except:
         - image: Visual Studio 2017
-    environment:
-      nodejs_version: "node"
+      environment:
+        nodejs_version: "node"
 
 build: off
 
