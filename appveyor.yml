@@ -1,6 +1,6 @@
 
 image:
-  # - Visual Studio 2017
+  - Visual Studio 2017
   - Ubuntu1804
 
 platform: x64
@@ -8,9 +8,18 @@ platform: x64
 environment:
   matrix:
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu1804
+      nodejs_version: 8
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu1804
       nodejs_version: 9
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu1804
       nodejs_version: node
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      nodejs_version: 8
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      nodejs_version: 9
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      nodejs_version: Current
 
 build: off
 
