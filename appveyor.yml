@@ -8,9 +8,9 @@ platform: x64
 environment:
   matrix:
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu1804
-      matrix:
-        - nodejs_version: 9
-        - nodejs_version: node
+      nodejs_version: 9
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu1804
+      nodejs_version: node
 
 build: off
 
