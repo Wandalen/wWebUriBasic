@@ -14,11 +14,12 @@ for:
   -
     matrix:
       only:
-        - image: Ubuntu1804
-        nodejs_version: "Current"
+        -
+          image: Ubuntu1804
+          nodejs_version: "Current"
 
-    environment:
-      nodejs_version: node
+      environment:
+        nodejs_version: node
 
 build: off
 
