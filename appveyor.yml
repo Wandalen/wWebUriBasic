@@ -12,6 +12,7 @@ environment:
     only:
       - image : Visual Studio 2017
         nodejs_version: "Current"
+    only:
       - image : Ubuntu1804
         nodejs_version: "node"
 
