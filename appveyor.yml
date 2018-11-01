@@ -1,7 +1,7 @@
 
 image:
-  # - Visual Studio 2017
-  - Ubuntu1804
+  - Visual Studio 2017
+  # - Ubuntu1804
 
 platform: x64
 
@@ -9,13 +9,13 @@ environment:
   matrix:
     # - nodejs_version: 8
     # - nodejs_version: 9
-    - nodejs_version: Current
+    - nodejs_version: "Current"
 for:
   -
     matrix:
       only:
         - image: Ubuntu1804
-          nodejs_version: Current
+          nodejs_version: "Current"
     environment:
       nodejs_version: node
 
