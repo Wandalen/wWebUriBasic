@@ -15,7 +15,12 @@ for:
     matrix:
       only:
         - image: Ubuntu1804
-        nodejs_version: "node"
+        nodejs_version: "Current"
+      except:
+        - image: Visual Studio 2017
+    environment:
+      nodejs_version: "node"
+
 build: off
 
 install:
