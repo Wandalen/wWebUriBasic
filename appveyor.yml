@@ -5,25 +5,12 @@ image:
 
 platform: x64
 
-for:
-  -
-    matrix:
-      only:
-        - image: Ubuntu1804
-    environment:
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu1804
       matrix:
-        - nodejs_version: "8"
-        - nodejs_version: "9"
-        - nodejs_version: "node"
-  -
-    matrix:
-      only:
-        - image: Visual Studio 2017
-    environment:
-      matrix:
-        - nodejs_version: "8"
-        - nodejs_version: "9"
-        - nodejs_version: "Current"
+        - nodejs_version: 9
+        - nodejs_version: node
 
 build: off
 
