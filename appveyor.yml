@@ -5,23 +5,25 @@ image:
 
 platform: x64
 
-environment:
-  matrix:
-        - nodejs_version: "8"
-        - nodejs_version: "9"
 for:
   -
     matrix:
       only:
         - image: Ubuntu1804
     environment:
-      nodejs_version: "node"
+      matrix:
+        - nodejs_version: "8"
+        - nodejs_version: "9"
+        - nodejs_version: "node"
   -
     matrix:
       only:
         - image: Visual Studio 2017
     environment:
-      nodejs_version: "Current"
+      matrix:
+        - nodejs_version: "8"
+        - nodejs_version: "9"
+        - nodejs_version: "Current"
 
 build: off
 
