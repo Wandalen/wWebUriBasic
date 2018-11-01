@@ -3,7 +3,7 @@ about :
 
   name : wWebUriFundamentals
   description : Collection of routines to operate web URIs ( URLs ) in the reliable and consistent way. Module WebUri extends Uri module to handle host and port parts of URI in a way appropriate for world wide web resources. This module leverages parsing, joining, extracting, normalizing, nativizing, resolving paths. Use the module to get uniform experience from playing with paths on different platforms.
-  version : 0.3.5
+  version : 0.3.6
   enabled : 1
   interpreters :
   - nodejs >= 6.0.0
@@ -22,30 +22,30 @@ path :
 
   repository : git+https://github.com/Wandalen/wWebUriFundamentals.git
   bugs : https://github.com/Wandalen/wWebUriFundamentals/issues
-  entry.debug : {path::out.debug}/dwtools/abase/____
-  entry.release : {path::out.release}/dwtools/abase/____
+  entry.debug : '{path::out.debug}/dwtools/abase/____'
+  entry.release : '{path::out.release}/dwtools/abase/____'
 
 build :
 
   .debug.raw.export :
     default : 1
+    filesPath : path::out.debug
+    entryPath : path::entry.debug
     setting :
       debug : 1
       raw : 1
       export : 1
-      filesPath : path::out.debug
-      entryPath : path::entry.debug
     steps :
       - build::.debug
       - step::export
 
   .release.compiled.export :
+    filesPath : path::out.release
+    entryPath : path::entry.release
     setting :
       debug : 0
       raw : 0
       export : 1
-      filesPath : path::out.release
-      entryPath : path::entry.release
     steps :
       - build::.release.compiled
       - step::export
