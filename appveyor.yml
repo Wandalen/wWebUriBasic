@@ -7,20 +7,15 @@ platform: x64
 
 environment:
   matrix:
-    - nodejs_version: "8"
-    - nodejs_version: "9"
+    # - nodejs_version: "8"
+    # - nodejs_version: "9"
     - nodejs_version: "Current"
 for:
   -
     matrix:
       only:
-        -
-          image: Ubuntu1804
-          nodejs_version: "Current"
-
-    environment:
-      nodejs_version: node
-
+        - image: Ubuntu1804
+        nodejs_version: "node"
 build: off
 
 install:
