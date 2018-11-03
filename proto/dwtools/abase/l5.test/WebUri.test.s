@@ -25,7 +25,7 @@ if( typeof module !== 'undefined' )
   var _ = _global_.wTools;
 
   _.include( 'wTesting' );
-  require( '../layer5/WebUri.s' );
+  require( '../l5/WebUri.s' );
 
 }
 
@@ -704,7 +704,7 @@ function resolve( test )
 var Self =
 {
 
-  name : 'Tools/base/layer4/WebUriFundamentals',
+  name : 'Tools/base/l4/WebUriFundamentals',
   silencing : 1,
 
   tests :
@@ -720,6 +720,6 @@ var Self =
 Self = wTestSuite( Self );
 
 if( typeof module !== 'undefined' && !module.parent )
-_.Tester.test( Self );
+/*_.*/wTester.test( Self );
 
 })();
