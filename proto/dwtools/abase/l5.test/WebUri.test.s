@@ -720,6 +720,6 @@ var Self =
 Self = wTestSuite( Self );
 
 if( typeof module !== 'undefined' && !module.parent )
-/*_.*/wTester.test( Self );
+wTester.test( Self );
 
 })();
