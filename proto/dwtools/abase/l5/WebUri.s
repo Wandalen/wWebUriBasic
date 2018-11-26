@@ -52,7 +52,7 @@ function isAbsolute( path )
 {
   let parent = this.path;
   _.assert( arguments.length === 1 );
-  _.assert( _.strIs( path ) );
+  _.assert( _.strIs( path ), 'Expects string' );
   if( this.isGlobal( path ) )
   return true;
   return parent.isAbsolute( path );
