@@ -43,14 +43,15 @@ function isAbsolute( path )
 
 //
 
-let join = Parent._joining_functor( 'join', 1 );
+let join = Parent.join_functor( 'join', 1 );
+let joinRaw = Parent.join_functor( 'joinRaw', 1 );
 
 //
 
-let urisJoin = _.path._pathMultiplicator_functor
-({
-  routine : join,
-});
+// let urisJoin = _.path._pathMultiplicator_functor
+// ({
+//   routine : join,
+// });
 
 //
 //
@@ -127,10 +128,10 @@ function resolve()
 
 //
 
-let urisResolve = _.path._pathMultiplicator_functor
-({
-  routine : resolve,
-});
+// let urisResolve = _.path._pathMultiplicator_functor
+// ({
+//   routine : resolve,
+// });
 
 // --
 // declare Fields
@@ -148,13 +149,14 @@ let Fields =
 let Routines =
 {
 
-  isAbsolute : isAbsolute,
+  isAbsolute,
 
-  join : join,
-  urisJoin : urisJoin,
+  join,
+  joinRaw,
+  // urisJoin : urisJoin,
 
-  resolve : resolve,
-  urisResolve : urisResolve,
+  resolve,
+  // urisResolve : urisResolve,
 
 }
 
