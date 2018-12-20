@@ -349,8 +349,14 @@ function join( test )
 
   test.case = 'join unix os paths';
   var paths = [ '/bar/', '/baz', 'foo/', '.' ];
-  var expected = '/baz/foo/.';
+  var expected = '/baz/foo';
   var got = _.weburi.join.apply( _.weburi, paths );
+  test.identical( got, expected );
+
+  test.case = 'join unix os paths';
+  var paths = [ '/bar/', '/baz', 'foo/', '.' ];
+  var expected = '/baz/foo/.';
+  var got = _.weburi.joinRaw.apply( _.weburi, paths );
   test.identical( got, expected );
 
   test.case = 'more complicated cases'; /* */
@@ -363,13 +369,23 @@ function join( test )
   test.identical( got, expected );
 
   var paths = [  '/aa', 'bb//', 'cc','.' ];
+  var expected = '/aa/bb//cc';
+  var got = _.weburi.join.apply( _.weburi, paths );
+  test.identical( got, expected );
+
+  var paths = [  '/aa', 'bb//', 'cc','.' ];
   var expected = '/aa/bb//cc/.';
+  var got = _.weburi.joinRaw.apply( _.weburi, paths );
+  test.identical( got, expected );
+
+  var paths = [  '/','a', '//b', '././c', '../d', '..e' ];
+  var expected = '//b/d/..e';
   var got = _.weburi.join.apply( _.weburi, paths );
   test.identical( got, expected );
 
   var paths = [  '/','a', '//b', '././c', '../d', '..e' ];
   var expected = '//b/././c/../d/..e';
-  var got = _.weburi.join.apply( _.weburi, paths );
+  var got = _.weburi.joinRaw.apply( _.weburi, paths );
   test.identical( got, expected );
 
 /*
