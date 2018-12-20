@@ -5,27 +5,10 @@
 if( typeof module !== 'undefined' )
 {
 
-  if( typeof _global_ === 'undefined' || !_global_.wBase )
-  {
-    let toolsPath = '../../../dwtools/Base.s';
-    let toolsExternal = 0;
-    try
-    {
-      toolsPath = require.resolve( toolsPath );
-    }
-    catch( err )
-    {
-      toolsExternal = 1;
-      require( 'wTools' );
-    }
-    if( !toolsExternal )
-    require( toolsPath );
-  }
-
-  var _ = _global_.wTools;
+  let _ = require( '../../Tools.s' );
 
   _.include( 'wTesting' );
-  require( '../layer5/WebUri.s' );
+  require( '../l5/WebUri.s' );
 
 }
 
@@ -704,7 +687,7 @@ function resolve( test )
 var Self =
 {
 
-  name : 'Tools/base/layer4/WebUriFundamentals',
+  name : 'Tools/base/l4/WebUriFundamentals',
   silencing : 1,
 
   tests :
@@ -720,6 +703,6 @@ var Self =
 Self = wTestSuite( Self );
 
 if( typeof module !== 'undefined' && !module.parent )
-_.Tester.test( Self );
+wTester.test( Self );
 
 })();
