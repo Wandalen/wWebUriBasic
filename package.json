@@ -26,8 +26,7 @@
     "wurifundamentals": ""
   },
   "devDependencies": {
-    "wTesting": "",
-    "wweburifundamentals": "."
+    "wTesting": ""
   },
   "keywords": [
     "wTools"
