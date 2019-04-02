@@ -123,7 +123,7 @@ function resolve()
   let parent = this.path;
   let joined = this.join.apply( this, arguments );
   let parsed = this.parseAtomic( joined );
-  parsed.webLocalPath = parent.resolve( parsed.webLocalPath );
+  parsed.localWebPath = parent.resolve( parsed.localWebPath );
   return this.str( parsed );
 }
 

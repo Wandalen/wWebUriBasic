@@ -132,119 +132,119 @@ function join( test )
   var got = _.weburi.join( 'http://www.site.com:13/ab','y','z' );
   test.identical( got, 'http://www.site.com:13/ab/y/z' );
 
-  test.case = 'add relative to uri with no webLocalPath';
+  test.case = 'add relative to uri with no localWebPath';
   var got = _.weburi.join( 'https://some.domain.com/','something/to/add' );
   test.identical( got, 'https://some.domain.com/something/to/add' );
 
-  test.case = 'add relative to uri with webLocalPath';
+  test.case = 'add relative to uri with localWebPath';
   var got = _.weburi.join( 'https://some.domain.com/was','something/to/add' );
   test.identical( got, 'https://some.domain.com/was/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( 'https://some.domain.com/was','/something/to/add' );
   test.identical( got, 'https://some.domain.com/something/to/add' );
 
   /* */
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '//some.domain.com/was','/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '://some.domain.com/was','/something/to/add' );
   test.identical( got, '://some.domain.com/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '//some.domain.com/was', 'x', '/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '://some.domain.com/was', 'x', '/something/to/add' );
   test.identical( got, '://some.domain.com/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '//some.domain.com/was', '/something/to/add', 'x' );
   test.identical( got, '/something/to/add/x' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '://some.domain.com/was', '/something/to/add', 'x' );
   test.identical( got, '://some.domain.com/something/to/add/x' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '//some.domain.com/was', '/something/to/add', '/x' );
   test.identical( got, '/x' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '://some.domain.com/was', '/something/to/add', '/x' );
   test.identical( got, '://some.domain.com/x' );
 
   /* */
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '/some/staging/index.html','/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '/some/staging/index.html', 'x', '/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '/some/staging/index.html', 'x', '/something/to/add', 'y' );
   test.identical( got, '/something/to/add/y' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '/some/staging/index.html','/something/to/add', '/y' );
   test.identical( got, '/y' );
 
   /* */
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '///some/staging/index.html','/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( ':///some/staging/index.html','/something/to/add' );
   test.identical( got, ':///something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '///some/staging/index.html', 'x', '/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( ':///some/staging/index.html', 'x', '/something/to/add' );
   test.identical( got, ':///something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '///some/staging/index.html', 'x', '/something/to/add', 'y' );
   test.identical( got, '/something/to/add/y' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( ':///some/staging/index.html', 'x', '/something/to/add', 'y' );
   test.identical( got, ':///something/to/add/y' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '///some/staging/index.html','/something/to/add', '/y' );
   test.identical( got, '/y' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( ':///some/staging/index.html','/something/to/add', '/y' );
   test.identical( got, ':///y' );
 
   /* */
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( 'svn+https://user@subversion.com/svn/trunk','/something/to/add' );
   test.identical( got, 'svn+https://user@subversion.com/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( 'svn+https://user@subversion.com/svn/trunk', 'x', '/something/to/add' );
   test.identical( got, 'svn+https://user@subversion.com/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( 'svn+https://user@subversion.com/svn/trunk', 'x', '/something/to/add', 'y' );
   test.identical( got, 'svn+https://user@subversion.com/something/to/add/y' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( 'svn+https://user@subversion.com/svn/trunk','/something/to/add', '/y' );
   test.identical( got, 'svn+https://user@subversion.com/y' );
 
@@ -253,19 +253,19 @@ function join( test )
   var uri = 'complex+protocol://www.site.com:13/path/name?query=here&and=here#anchor';
   var parsed = _.weburi.parse( uri );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( uri,'/something/to/add' );
   test.identical( got, parsed.origin + '/something/to/add' + '?query=here&and=here#anchor' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( uri, 'x', '/something/to/add' );
   test.identical( got, parsed.origin + '/something/to/add' + '?query=here&and=here#anchor' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( uri, 'x', '/something/to/add', 'y' );
   test.identical( got, parsed.origin + '/something/to/add/y' + '?query=here&and=here#anchor' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( uri,'/something/to/add', '/y' );
   test.identical( got, parsed.origin + '/y' + '?query=here&and=here#anchor' );
 
@@ -278,7 +278,7 @@ function join( test )
   var expected = '://user:pass@sub.host.com:8080/x//y//z?query1=string1&query2=string2#hash2';
   test.identical( got, expected );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( '://some.domain.com/was','/something/to/add' );
   test.identical( got, '://some.domain.com/something/to/add' );
 
@@ -322,7 +322,7 @@ function join( test )
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.join( 'file:///some/file','/something/to/add' );
   test.identical( got, 'file:///something/to/add' );
 
@@ -506,119 +506,119 @@ function joinRaw( test )
   var got = _.weburi.joinRaw( 'http://www.site.com:13/ab','y','z' );
   test.identical( got, 'http://www.site.com:13/ab/y/z' );
 
-  test.case = 'add relative to uri with no webLocalPath';
+  test.case = 'add relative to uri with no localWebPath';
   var got = _.weburi.joinRaw( 'https://some.domain.com/','something/to/add' );
   test.identical( got, 'https://some.domain.com/something/to/add' );
 
-  test.case = 'add relative to uri with webLocalPath';
+  test.case = 'add relative to uri with localWebPath';
   var got = _.weburi.joinRaw( 'https://some.domain.com/was','something/to/add' );
   test.identical( got, 'https://some.domain.com/was/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( 'https://some.domain.com/was','/something/to/add' );
   test.identical( got, 'https://some.domain.com/something/to/add' );
 
   /* */
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '//some.domain.com/was','/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '://some.domain.com/was','/something/to/add' );
   test.identical( got, '://some.domain.com/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '//some.domain.com/was', 'x', '/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '://some.domain.com/was', 'x', '/something/to/add' );
   test.identical( got, '://some.domain.com/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '//some.domain.com/was', '/something/to/add', 'x' );
   test.identical( got, '/something/to/add/x' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '://some.domain.com/was', '/something/to/add', 'x' );
   test.identical( got, '://some.domain.com/something/to/add/x' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '//some.domain.com/was', '/something/to/add', '/x' );
   test.identical( got, '/x' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '://some.domain.com/was', '/something/to/add', '/x' );
   test.identical( got, '://some.domain.com/x' );
 
   /* */
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '/some/staging/index.html','/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '/some/staging/index.html', 'x', '/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '/some/staging/index.html', 'x', '/something/to/add', 'y' );
   test.identical( got, '/something/to/add/y' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '/some/staging/index.html','/something/to/add', '/y' );
   test.identical( got, '/y' );
 
   /* */
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '///some/staging/index.html','/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( ':///some/staging/index.html','/something/to/add' );
   test.identical( got, ':///something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '///some/staging/index.html', 'x', '/something/to/add' );
   test.identical( got, '/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( ':///some/staging/index.html', 'x', '/something/to/add' );
   test.identical( got, ':///something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '///some/staging/index.html', 'x', '/something/to/add', 'y' );
   test.identical( got, '/something/to/add/y' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( ':///some/staging/index.html', 'x', '/something/to/add', 'y' );
   test.identical( got, ':///something/to/add/y' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '///some/staging/index.html','/something/to/add', '/y' );
   test.identical( got, '/y' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( ':///some/staging/index.html','/something/to/add', '/y' );
   test.identical( got, ':///y' );
 
   /* */
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( 'svn+https://user@subversion.com/svn/trunk','/something/to/add' );
   test.identical( got, 'svn+https://user@subversion.com/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( 'svn+https://user@subversion.com/svn/trunk', 'x', '/something/to/add' );
   test.identical( got, 'svn+https://user@subversion.com/something/to/add' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( 'svn+https://user@subversion.com/svn/trunk', 'x', '/something/to/add', 'y' );
   test.identical( got, 'svn+https://user@subversion.com/something/to/add/y' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( 'svn+https://user@subversion.com/svn/trunk','/something/to/add', '/y' );
   test.identical( got, 'svn+https://user@subversion.com/y' );
 
@@ -627,19 +627,19 @@ function joinRaw( test )
   var uri = 'complex+protocol://www.site.com:13/path/name?query=here&and=here#anchor';
   var parsed = _.weburi.parse( uri );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( uri,'/something/to/add' );
   test.identical( got, parsed.origin + '/something/to/add' + '?query=here&and=here#anchor' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( uri, 'x', '/something/to/add' );
   test.identical( got, parsed.origin + '/something/to/add' + '?query=here&and=here#anchor' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( uri, 'x', '/something/to/add', 'y' );
   test.identical( got, parsed.origin + '/something/to/add/y' + '?query=here&and=here#anchor' );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( uri,'/something/to/add', '/y' );
   test.identical( got, parsed.origin + '/y' + '?query=here&and=here#anchor' );
 
@@ -652,7 +652,7 @@ function joinRaw( test )
   var expected = '://user:pass@sub.host.com:8080/x//y//z?query1=string1&query2=string2#hash2';
   test.identical( got, expected );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( '://some.domain.com/was','/something/to/add' );
   test.identical( got, '://some.domain.com/something/to/add' );
 
@@ -696,7 +696,7 @@ function joinRaw( test )
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
-  test.case = 'add absolute to uri with webLocalPath';
+  test.case = 'add absolute to uri with localWebPath';
   var got = _.weburi.joinRaw( 'file:///some/file','/something/to/add' );
   test.identical( got, 'file:///something/to/add' );
 
