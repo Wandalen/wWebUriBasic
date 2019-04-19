@@ -11,6 +11,12 @@
  * @file WebUri.s.
  */
 
+/**
+ * Collection of routines to operate web URIs ( URLs ) in the reliable and consistent way.
+  @namespace "wTools.weburi"
+  @memberof module:Tools/base/WebUri
+*/
+
 if( typeof module !== 'undefined' )
 {
 
@@ -32,6 +38,14 @@ let Self = _.weburi = _.weburi || Object.create( Parent );
 //
 // --
 
+/**
+ * @summary Checks if argument `path` is a absolute path.
+ * @param {String} path Source path.
+ * @returns {Boolean} Returns true if provided path is absolute.
+ * @function isAbsolute
+ * @memberof module:Tools/base/WebUri.wTools.weburi
+ */
+
 function isAbsolute( path )
 {
   let parent = this.path;
@@ -44,7 +58,30 @@ function isAbsolute( path )
 
 //
 
+/**
+ * @summary Joins a sequence of paths into single web uri.
+ * @param {...String} path Source paths.
+ * @example
+ * _.weburi.join( 'http://www.site.com:13','a','http:///dir','b' );
+ * //'http://www.site.com:13/dir/b'
+ * @returns {String} Returns normalized new web uri.
+ * @function join
+ * @memberof module:Tools/base/WebUri.wTools.weburi
+ */
+
 let join = Parent.join_functor( 'join', 1 );
+
+/**
+ * @summary Joins a sequence of paths into single web uri.
+ * @param {...String} path Source paths.
+ * @example
+ * _.weburi.joinRaw( 'http://www.site.com:13','a','http:///dir///','b' );
+ * //'http://www.site.com:13/dir////b'
+ * @returns {String} Returns new web uri withou normalization.
+ * @function joinRaw
+ * @memberof module:Tools/base/WebUri.wTools.weburi
+ */
+
 let joinRaw = Parent.join_functor( 'joinRaw', 1 );
 
 //
@@ -117,6 +154,21 @@ let joinRaw = Parent.join_functor( 'joinRaw', 1 );
 //
 //   return this.str( result );
 // }
+
+/**
+ * @summary Resolves a sequence of paths or path segments into web uri.
+ * @description
+ * The given sequence of paths is processed from right to left,with each subsequent path prepended until an absolute
+ * path is constructed. If after processing all given path segments an absolute path has not yet been generated,
+ * the current working directory is used.
+ * @param {...String} path Source paths.
+ * @example
+ * _.weburi.resolve( 'http://www.site.com:13','a/../' );
+ * //'http://www.site.com:13/'
+ * @returns {String} Returns new web uri withou normalization.
+ * @function resolve
+ * @memberof module:Tools/base/WebUri.wTools.weburi
+ */
 
 function resolve()
 {
