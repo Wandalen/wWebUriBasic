@@ -8,14 +8,17 @@ about:
     leverages parsing, joining, extracting, normalizing, nativizing, resolving
     paths. Use the module to get uniform experience from playing with paths on
     different platforms.
-  version: 0.3.37
   enabled: 1
-  interpreters:
-    - nodejs >= 6.0.0
-    - chrome >= 60.0.0
-    - firefox >= 60.0.0
-  keywords:
-    - wTools
+  version: 0.3.37
+  values:
+    enabled: 1
+    name: wWebUriFundamentals
+    interpreters:
+      - nodejs >= 6.0.0
+      - chrome >= 60.0.0
+      - firefox >= 60.0.0
+    keywords:
+      - wTools
 execution:
   scripts:
     test: wtest proto
