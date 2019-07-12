@@ -298,7 +298,7 @@ function join( test )
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p//a//t//h?query=string#hash';
-  var got = _.weburi.join( uri, 'x/'  );
+  var got = _.weburi.join( uri, 'x'  );
   var expected = '://user:pass@sub.host.com:8080/p//a//t//h/x?query=string#hash'
   test.identical( got, expected );
 
@@ -318,7 +318,7 @@ function join( test )
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join( uri, 'x/'  );
+  var got = _.weburi.join( uri, 'x'  );
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
@@ -343,7 +343,7 @@ function join( test )
 
   test.case = 'works like join';
   var paths = [ 'c:\\', 'foo\\', 'bar\\' ];
-  var expected = '/c/foo/bar';
+  var expected = '/c/foo/bar/';
   var got = _.weburi.join.apply( _.weburi, paths );
   test.identical( got, expected );
 
@@ -672,7 +672,7 @@ function joinRaw( test )
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p//a//t//h?query=string#hash';
-  var got = _.weburi.joinRaw( uri, 'x/'  );
+  var got = _.weburi.joinRaw( uri, 'x'  );
   var expected = '://user:pass@sub.host.com:8080/p//a//t//h/x?query=string#hash'
   test.identical( got, expected );
 
@@ -692,7 +692,7 @@ function joinRaw( test )
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw( uri, 'x/'  );
+  var got = _.weburi.joinRaw( uri, 'x'  );
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
@@ -717,7 +717,7 @@ function joinRaw( test )
 
   test.case = 'works like joinRaw';
   var paths = [ 'c:\\', 'foo\\', 'bar\\' ];
-  var expected = '/c/foo/bar';
+  var expected = '/c/foo/bar/';
   var got = _.weburi.joinRaw.apply( _.weburi, paths );
   test.identical( got, expected );
 
@@ -876,10 +876,10 @@ function resolve( test )
   test.identical( got, ':///www.site.com:13/.a./b/.c.' );
 
   var got = _.weburi.resolve( ':///www.site.com:13','a/../' );
-  test.identical( got, ':///www.site.com:13' );
+  test.identical( got, ':///www.site.com:13/' );
 
   var got = _.weburi.resolve( ':///www.site.com:13/','a/../' );
-  test.identical( got, ':///www.site.com:13' );
+  test.identical( got, ':///www.site.com:13/' );
 
   /* */
 
@@ -919,20 +919,20 @@ function resolve( test )
   var got = _.weburi.resolve( '/some/staging/index.html/','.a.', 'b','.c.' );
   test.identical( got, '/some/staging/index.html/.a./b/.c.' );
 
-  var got = _.weburi.resolve( '/some/staging/index.html','a/../' );
-  test.identical( got, '/some/staging/index.html' );
+  var got = _.weburi.resolve( '/some/staging/index.html/','a/../' );
+  test.identical( got, '/some/staging/index.html/' );
 
   var got = _.weburi.resolve( '/some/staging/index.html/','a/../' );
-  test.identical( got, '/some/staging/index.html' );
+  test.identical( got, '/some/staging/index.html/' );
 
   var got = _.weburi.resolve( '//some/staging/index.html', '.', 'a' );
-  test.identical( got, '//some/staging/index.html/a' )
+  test.identical( got, '//some/staging/index.html/a' );
 
   var got = _.weburi.resolve( '///some/staging/index.html', 'a', '.', 'b', '..' );
-  test.identical( got, '///some/staging/index.html/a' )
+  test.identical( got, '///some/staging/index.html/a' );
 
   var got = _.weburi.resolve( 'file:///some/staging/index.html', '../..' );
-  test.identical( got, 'file:///some' )
+  test.identical( got, 'file:///some' );
 
   var got = _.weburi.resolve( 'svn+https://user@subversion.com/svn/trunk', '../a', 'b', '../c' );
   test.identical( got, 'svn+https://user@subversion.com/svn/a/c' );
@@ -956,7 +956,7 @@ function resolve( test )
   test.case = 'works like resolve';
 
   var paths = [ 'c:\\', 'foo\\', 'bar\\' ];
-  var expected = '/c/foo/bar';
+  var expected = '/c/foo/bar/';
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, expected );
 
