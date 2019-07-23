@@ -1054,9 +1054,9 @@ var Self =
   tests :
   {
 
-    /*ttt*/join,
-    /*ttt*/joinRaw,
-    /*ttt*/resolve,
+    join,
+    joinRaw,
+    resolve,
 
   },
 
