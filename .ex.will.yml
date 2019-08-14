@@ -2,12 +2,12 @@
 
 about :
 
-  name : "wWebUriFundamentals"
+  name : "wWebUriBasic"
   description : "Collection of routines to operate web URIs ( URLs ) in the reliable and consistent way. Module WebUri extends Uri module to handle host and port parts of URI in a way appropriate for world wide web resources. This module leverages parsing, joining, extracting, normalizing, nativizing, resolving paths. Use the module to get uniform experience from playing with paths on different platforms."
   version : "0.3.37"
   enabled : 1
   interpreters :
-  - nodejs >= 6.0.0
+  - nodejs >= 8.0.0
   - chrome >= 60.0.0
   - firefox >= 60.0.0
   keywords :
@@ -21,8 +21,8 @@ execution :
 
 path :
 
-  repository : git+https:///github.com/Wandalen/wWebUriFundamentals.git
-  bugs : https:///github.com/Wandalen/wWebUriFundamentals/issues
+  repository : git+https:///github.com/Wandalen/wWebUriBasic.git
+  bugs : https:///github.com/Wandalen/wWebUriBasic/issues
 
 step :
 

@@ -1,6 +1,6 @@
 format: willfile-1.0.0
 about:
-  name: wWebUriFundamentals
+  name: wWebUriBasic
   description: >-
     Collection of routines to operate web URIs ( URLs ) in the reliable and
     consistent way. Module WebUri extends Uri module to handle host and port
@@ -11,7 +11,7 @@ about:
   enabled: 1
   version: 0.3.37
   interpreters: &ref_0
-    - nodejs >= 6.0.0
+    - nodejs >= 8.0.0
     - chrome >= 60.0.0
     - firefox >= 60.0.0
   keywords: &ref_1
@@ -20,11 +20,11 @@ path:
   module.willfiles:
     criterion:
       predefined: 1
-    path: wWebUriFundamentals.out.will.yml
+    path: wWebUriBasic.out.will.yml
   module.common:
     criterion:
       predefined: 1
-    path: wWebUriFundamentals.out
+    path: wWebUriBasic.out
   module.original.willfiles:
     criterion:
       predefined: 1
@@ -58,9 +58,9 @@ path:
   proto:
     path: ../proto
   repository:
-    path: 'git+https:///github.com/Wandalen/wWebUriFundamentals.git'
+    path: 'git+https:///github.com/Wandalen/wWebUriBasic.git'
   bugs:
-    path: 'https:///github.com/Wandalen/wWebUriFundamentals/issues'
+    path: 'https:///github.com/Wandalen/wWebUriBasic/issues'
   exported.dir.proto.export:
     criterion:
       default: 1
@@ -293,7 +293,7 @@ exported:
 module:
   ../:
     about:
-      name: wWebUriFundamentals
+      name: wWebUriBasic
       description: >-
         Collection of routines to operate web URIs ( URLs ) in the reliable and
         consistent way. Module WebUri extends Uri module to handle host and port
@@ -349,9 +349,9 @@ module:
       proto:
         path: ./proto
       repository:
-        path: 'git+https:///github.com/Wandalen/wWebUriFundamentals.git'
+        path: 'git+https:///github.com/Wandalen/wWebUriBasic.git'
       bugs:
-        path: 'https:///github.com/Wandalen/wWebUriFundamentals/issues'
+        path: 'https:///github.com/Wandalen/wWebUriBasic/issues'
       exported.dir.proto.export:
         criterion:
           default: 1
@@ -581,4 +581,4 @@ module:
           export: 1
           tar: 1
           public: 1
-  wWebUriFundamentals.out: root
+  wWebUriBasic.out: root
