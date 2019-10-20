@@ -1048,7 +1048,7 @@ function resolve( test )
 var Self =
 {
 
-  name : 'Tools/base/l4/WebUriFundamentals',
+  name : 'Tools.base.l4.WebUriFundamentals',
   silencing : 1,
 
   tests :
