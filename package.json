@@ -16,7 +16,7 @@
   {
     "url" : "https://github.com/Wandalen/wWebUriBasic/issues"
   }, 
-  "dependencies" : { "wTools" : "", "wuribasic" : "" }, 
-  "devDependencies" : { "wTesting" : "" }, 
+  "dependencies" : { "wTools" : "beta", "wuribasic" : "beta" }, 
+  "devDependencies" : { "wTesting" : "beta" }, 
   "keywords" : [ "wTools" ]
 }
