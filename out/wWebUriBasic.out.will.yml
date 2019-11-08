@@ -6,12 +6,13 @@ consistency:
     hash: b24a6fc290facb379a9b084b52e1ac50
     size: 2060
   ../.im.will.yml: &ref_1
-    hash: aa314cface64bc4b7ca63533702223f6
-    size: 4931
+    hash: ea961ccbe87cd6008abdaf7ba2d74fd9
+    size: 5005
 module:
   wWebUriBasic.out:
     about:
       name: wWebUriBasic
+      org: noorg
       description: >-
         Collection of routines to operate web URIs ( URLs ) in the reliable and
         consistent way. Module WebUri extends Uri module to handle host and port
@@ -63,9 +64,6 @@ module:
       download:
         criterion:
           predefined: 1
-      remote:
-        criterion:
-          predefined: 1
       repository:
         path: 'git+https:///github.com/Wandalen/wWebUriBasic.git'
       origins:
@@ -75,15 +73,15 @@ module:
       bugtracker:
         path: 'https:///github.com/Wandalen/wWebUriBasic/issues'
       in:
-        criterion:
-          predefined: 0
         path: .
       out:
-        criterion:
-          predefined: 0
         path: .
       temp:
-        path: 'path::out'
+        path:
+          - 'path::out'
+          - ../package-lock.json
+          - ../package.json
+          - ../node_modules
       proto:
         path: ../proto
       export:
@@ -148,11 +146,13 @@ module:
         path: '{path::out.*=}/source/Index.s'
       exported.dir.proto.export:
         criterion:
+          generated: 1
           content: proto
           export: 1
         path: ../proto
       exported.files.proto.export:
         criterion:
+          generated: 1
           content: proto
           export: 1
         path:
@@ -335,6 +335,7 @@ module:
           prefixPath: ../proto
         mandatory: 1
         criterion:
+          generated: 1
           content: proto
           export: 1
       exported.files.proto.export:
@@ -347,6 +348,7 @@ module:
         recursive: 0
         mandatory: 1
         criterion:
+          generated: 1
           content: proto
           export: 1
     step:
@@ -793,6 +795,7 @@ module:
   ../:
     about:
       name: wWebUriBasic
+      org: noorg
       description: >-
         Collection of routines to operate web URIs ( URLs ) in the reliable and
         consistent way. Module WebUri extends Uri module to handle host and port
@@ -837,9 +840,6 @@ module:
       download:
         criterion:
           predefined: 1
-      remote:
-        criterion:
-          predefined: 1
       repository:
         path: 'git+https:///github.com/Wandalen/wWebUriBasic.git'
       origins:
@@ -849,21 +849,21 @@ module:
       bugtracker:
         path: 'https:///github.com/Wandalen/wWebUriBasic/issues'
       in:
-        criterion:
-          predefined: 0
         path: .
       out:
-        criterion:
-          predefined: 0
         path: out
       temp:
-        path: 'path::out'
+        path:
+          - 'path::out'
+          - package-lock.json
+          - package.json
+          - node_modules
       proto:
-        path: ./proto
+        path: proto
       export:
         path: '{path::proto}/**'
       doc:
-        path: ./doc
+        path: doc
       out.raw.debug:
         criterion:
           debug: debug
@@ -1485,5 +1485,5 @@ module:
         hash: b24a6fc290facb379a9b084b52e1ac50
         size: 2060
       ../.im.will.yml:
-        hash: aa314cface64bc4b7ca63533702223f6
-        size: 4931
+        hash: ea961ccbe87cd6008abdaf7ba2d74fd9
+        size: 5005
