@@ -2,10 +2,13 @@ format: outwillfile-2.0
 root:
   - wWebUriBasic.out
 consistency:
-  ../.ex.will.yml: &ref_0
+  wWebUriBasic.out.will.yml: &ref_0
+    hash: 31191e9d776f6981b3304e6cfbeb6002
+    size: 38915
+  ../.ex.will.yml: &ref_1
     hash: b24a6fc290facb379a9b084b52e1ac50
     size: 2060
-  ../.im.will.yml: &ref_1
+  ../.im.will.yml: &ref_2
     hash: ea961ccbe87cd6008abdaf7ba2d74fd9
     size: 5005
 module:
@@ -22,18 +25,18 @@ module:
         with paths on different platforms.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      interpreters:
         - njs >= 8.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
+      keywords:
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: &ref_4
+      contributors:
         - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wweburibasic
-      npm.scripts: &ref_5
+      npm.scripts:
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -702,6 +705,24 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          reflector: 'reflector::exported.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          reflector: 'reflector::exported.files.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -790,8 +811,9 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      wWebUriBasic.out.will.yml: *ref_0
+      ../.ex.will.yml: *ref_1
+      ../.im.will.yml: *ref_2
   ../:
     about:
       name: wWebUriBasic
@@ -805,13 +827,20 @@ module:
         with paths on different platforms.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
+      interpreters:
+        - njs >= 8.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: *ref_4
+      contributors:
+        - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wweburibasic
-      npm.scripts: *ref_5
+      npm.scripts:
+        test: wtest .run proto/**
+        docgen: wdocgen .build proto
     path:
       module.willfiles:
         criterion:
@@ -1487,3 +1516,6 @@ module:
       ../.im.will.yml:
         hash: ea961ccbe87cd6008abdaf7ba2d74fd9
         size: 5005
+      wWebUriBasic.out.will.yml:
+        hash: 31191e9d776f6981b3304e6cfbeb6002
+        size: 38915
