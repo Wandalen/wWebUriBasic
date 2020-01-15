@@ -355,7 +355,7 @@ function join( test )
 
   test.case = 'more complicated cases'; /* */
 
-  /* qqq */
+  /* xxx */
 
   var paths = [  '/aa', 'bb//', 'cc' ];
   var expected = '/aa/bb//cc';
@@ -729,7 +729,7 @@ function joinRaw( test )
 
   test.case = 'more complicated cases'; /* */
 
-  /* qqq */
+  /* xxx */
 
   var paths = [  '/aa', 'bb//', 'cc' ];
   var expected = '/aa/bb//cc';
