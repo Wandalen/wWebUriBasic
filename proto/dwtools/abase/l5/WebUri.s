@@ -20,7 +20,7 @@
 if( typeof module !== 'undefined' )
 {
 
-  let _ = require( '../../Tools.s' );
+  let _ = require( '../../../dwtools/Tools.s' );
 
   _.include( 'wPathBasic' );
   _.include( 'wUriBasic' );
@@ -175,7 +175,7 @@ function resolve()
   let parent = this.path;
   let joined = this.join.apply( this, arguments );
   let parsed = this.parseAtomic( joined );
-  parsed.localWebPath = parent.resolve( parsed.localWebPath );
+  parsed.resourcePath = parent.resolve( parsed.resourcePath );
   return this.str( parsed );
 }
 
