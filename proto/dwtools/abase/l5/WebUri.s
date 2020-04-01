@@ -14,6 +14,7 @@
 /**
  * Collection of routines to operate web URIs ( URLs ) in the reliable and consistent way.
   @namespace "wTools.weburi"
+  @extends Tools
   @memberof module:Tools/base/WebUri
 */
 
