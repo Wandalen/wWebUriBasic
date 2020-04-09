@@ -14,7 +14,8 @@
 /**
  * Collection of routines to operate web URIs ( URLs ) in the reliable and consistent way.
   @namespace "wTools.weburi"
-  @memberof module:Tools/base/WebUri
+  @extends Tools
+  @module Tools/base/WebUri
 */
 
 if( typeof module !== 'undefined' )
@@ -43,7 +44,8 @@ let Self = _.weburi = _.weburi || Object.create( Parent );
  * @param {String} path Source path.
  * @returns {Boolean} Returns true if provided path is absolute.
  * @function isAbsolute
- * @memberof module:Tools/base/WebUri.wTools.weburi
+ * @module Tools/base/WebUri
+ * @namespace Tools.weburi
  */
 
 function isAbsolute( path )
@@ -66,7 +68,8 @@ function isAbsolute( path )
  * //'http://www.site.com:13/dir/b'
  * @returns {String} Returns normalized new web uri.
  * @function join
- * @memberof module:Tools/base/WebUri.wTools.weburi
+ * @module Tools/base/WebUri
+ * @namespace Tools.weburi
  */
 
 let join = Parent.join_functor( 'join', 1 );
@@ -79,7 +82,8 @@ let join = Parent.join_functor( 'join', 1 );
  * //'http://www.site.com:13/dir////b'
  * @returns {String} Returns new web uri withou normalization.
  * @function joinRaw
- * @memberof module:Tools/base/WebUri.wTools.weburi
+ * @module Tools/base/WebUri
+ * @namespace Tools.weburi
  */
 
 let joinRaw = Parent.join_functor( 'joinRaw', 1 );
@@ -167,7 +171,8 @@ let joinRaw = Parent.join_functor( 'joinRaw', 1 );
  * //'http://www.site.com:13/'
  * @returns {String} Returns new web uri withou normalization.
  * @function resolve
- * @memberof module:Tools/base/WebUri.wTools.weburi
+ * @module Tools/base/WebUri
+ * @namespace Tools.weburi
  */
 
 function resolve()
