@@ -353,7 +353,9 @@ function join( test )
   var got = _.weburi.join.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  test.case = 'more complicated cases'; /* */
+  /* */
+
+  test.case = 'more complicated cases';
 
   /* xxx */
 
@@ -727,7 +729,9 @@ function joinRaw( test )
   var got = _.weburi.joinRaw.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  test.case = 'more complicated cases'; /* */
+  /* */
+
+  test.case = 'more complicated cases';
 
   /* xxx */
 
