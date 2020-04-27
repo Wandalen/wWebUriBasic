@@ -1,22 +1,22 @@
 {
-  "name" : "wweburibasic", 
-  "version" : "0.3.113", 
-  "description" : "Collection of routines to operate web URIs ( URLs ) in the reliable and consistent way. Module WebUri extends Uri module to handle host and port parts of URI in a way appropriate for world wide web resources. This module leverages parsing, joining, extracting, normalizing, nativizing, resolving paths. Use the module to get uniform experience from playing with paths on different platforms.", 
-  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>", 
-  "license" : "MIT", 
-  "main" : "proto/dwtools/abase/l5/WebUri.s", 
-  "files" : [ "proto/dwtools/abase/l5", "proto/dwtools/Tools.s", "out" ], 
-  "scripts" : { "test" : "wtest .run proto/**", "docgen" : "wdocgen proto" }, 
-  "repository" : 
+  "name" : "wweburibasic",
+  "version" : "0.3.114",
+  "description" : "Collection of routines to operate web URIs ( URLs ) in the reliable and consistent way. Module WebUri extends Uri module to handle host and port parts of URI in a way appropriate for world wide web resources. This module leverages parsing, joining, extracting, normalizing, nativizing, resolving paths. Use the module to get uniform experience from playing with paths on different platforms.",
+  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>",
+  "license" : "MIT",
+  "main" : "proto/dwtools/abase/l5/WebUri.s",
+  "files" : [ "proto/dwtools/abase/l5", "proto/dwtools/Tools.s", "out" ],
+  "scripts" : { "test" : "wtest .run proto/**", "docgen" : "wdocgen proto" },
+  "repository" :
   {
-    "type" : "git", 
+    "type" : "git",
     "url" : "https://github.com/Wandalen/wWebUriBasic.git"
-  }, 
-  "bugs" : 
+  },
+  "bugs" :
   {
     "url" : "https://github.com/Wandalen/wWebUriBasic/issues"
-  }, 
-  "dependencies" : { "wTools" : "", "wuribasic" : "" }, 
-  "devDependencies" : { "wTesting" : "" }, 
+  },
+  "dependencies" : { "wTools" : "", "wuribasic" : "" },
+  "devDependencies" : { "wTesting" : "" },
   "keywords" : [ "wTools" ]
 }
