@@ -133,7 +133,7 @@ let joinRaw = Parent.join_functor( 'joinRaw', 1 );
 //     if( !result.longPath && src.longPath !== undefined )
 //     {
 //       if( !_.strDefined( src.longPath ) )
-//       src.longPath = this._rootStr;
+//       src.longPath = this.rootToken;
 //
 //       result.longPath = src.longPath;
 //     }
