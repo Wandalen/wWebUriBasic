@@ -160,6 +160,7 @@ module:
           export: 1
         path:
           - ../proto
+          - ../proto/Integration.test.s
           - ../proto/dwtools
           - ../proto/dwtools/Tools.s
           - ../proto/dwtools/abase
@@ -1499,6 +1500,4 @@ module:
       ../.im.will.yml:
         hash: ea961ccbe87cd6008abdaf7ba2d74fd9
         size: 5005
-      wWebUriBasic.out.will.yml:
-        hash: e6bb25ac94b6008e679886e99aa378db
-        size: 38568
+      wWebUriBasic.out.will.yml: *ref_0
