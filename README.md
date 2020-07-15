@@ -6,7 +6,7 @@ Collection of routines to operate web URIs ( URLs ) in the reliable and consiste
 ## Try out
 ```
 npm install
-node sample/Sample.js
+node sample/Sample.s
 ```
 
 
