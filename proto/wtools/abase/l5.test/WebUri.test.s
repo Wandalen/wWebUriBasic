@@ -1052,7 +1052,7 @@ function resolve( test )
 let Self =
 {
 
-  name : 'Tools.base.l4.WebUriFundamentals',
+  name : 'Tools.l4.WebUriFundamentals',
   silencing : 1,
 
   tests :
