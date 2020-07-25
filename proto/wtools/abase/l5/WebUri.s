@@ -8,8 +8,7 @@
 */
 
 /**
- * @file WebUri.s.
- */
+ *  */
 
 /**
  * Collection of routines to operate web URIs ( URLs ) in the reliable and consistent way.
