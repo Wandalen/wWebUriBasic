@@ -1,4 +1,5 @@
-( function _WebUri_s_() {
+( function _WebUri_s_()
+{
 
 'use strict';
 
