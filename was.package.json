@@ -17,6 +17,6 @@
     "url" : "https://github.com/Wandalen/wWebUriBasic/issues"
   },
   "dependencies" : { "wTools" : "", "wuribasic" : "" },
-  "devDependencies" : { "wTesting" : "" },
+  "devDependencies" : { "wTesting" : "", "eslint" : "7.1.0", "wweburibasic" : "file:." },
   "keywords" : [ "wTools" ]
 }
