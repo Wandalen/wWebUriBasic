@@ -112,7 +112,7 @@ function join_body( o )
 
   function pathsParseAtomicAndSetIsGlobal( args )
   {
-    let result = [];
+    let result = _.arrayMake( args.length );
 
     for( let s = 0 ; s < args.length ; s++ )
     {
@@ -212,11 +212,7 @@ let joinRaw = Parent.join_functor( 'joinRaw', 1 );
 //
 
 let joinRaw_ = _.routineUnite( join_head, join_body );
-joinRaw_.defaults =
-{
-  routineName : 'joinRaw',
-  args : null,
-};
+joinRaw_.defaults.routineName = 'joinRaw';
 
 //
 
@@ -310,6 +306,7 @@ function resolve()
   let parent = this.path;
   let joined = this.join.apply( this, arguments );
   let parsed = this.parseAtomic( joined );
+  if( parsed.resourcePath )
   parsed.resourcePath = parent.resolve( parsed.resourcePath );
   return this.str( parsed );
 }
