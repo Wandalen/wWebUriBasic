@@ -73,20 +73,20 @@ let join = Parent.join_functor( 'join', 1 );
 
 //
 
-function join_head( routine, args )
-{
-  let o = args[ 0 ];
-
-  if( !_.mapIs( o ) )
-  o = { args };
-  else
-  _.assert( args.length === 1, 'Expects single options map {-o-}' );
-
-  _.routineOptions( routine, o );
-  _.assert( _.strIs( o.routineName ) );
-
-  return o;
-}
+// function join_head( routine, args )
+// {
+//   let o = args[ 0 ];
+//
+//   if( !_.mapIs( o ) )
+//   o = { args };
+//   else
+//   _.assert( args.length === 1, 'Expects single options map {-o-}' );
+//
+//   _.routineOptions( routine, o );
+//   _.assert( _.strIs( o.routineName ) );
+//
+//   return o;
+// }
 
 //
 
@@ -194,7 +194,7 @@ join_body.defaults =
 
 //
 
-let join_ = _.routineUnite( join_head, join_body );
+let join_ = _.routineUnite( Parent.join_.head, join_body );
 
 /**
  * @summary Joins a sequence of paths into single web uri.
@@ -212,7 +212,7 @@ let joinRaw = Parent.join_functor( 'joinRaw', 1 );
 
 //
 
-let joinRaw_ = _.routineUnite( join_head, join_body );
+let joinRaw_ = _.routineUnite( Parent.joinRaw_.head, join_body );
 joinRaw_.defaults.routineName = 'joinRaw';
 
 //
