@@ -1,4 +1,5 @@
-( function _WebUri_s_() {
+( function _WebUri_s_()
+{
 
 'use strict';
 
@@ -6,9 +7,6 @@
  * Collection of cross-platform routines to operate web URIs ( URLs ) in the reliable and consistent way. Module WebUri extends Uri module to handle host and port parts of URI in a way appropriate for world wide web resources. This module leverages parsing, joining, extracting, normalizing, nativizing, resolving paths. Use the module to get uniform experience from playing with paths on different platforms.
   @module Tools/base/WebUri
 */
-
-/**
- *  */
 
 /**
  * Collection of cross-platform routines to operate web URIs ( URLs ) in the reliable and consistent way.
@@ -73,6 +71,131 @@ function isAbsolute( path )
 
 let join = Parent.join_functor( 'join', 1 );
 
+//
+
+// function join_head( routine, args )
+// {
+//   let o = args[ 0 ];
+//
+//   if( !_.mapIs( o ) )
+//   o = { args };
+//   else
+//   _.assert( args.length === 1, 'Expects single options map {-o-}' );
+//
+//   _.routineOptions( routine, o );
+//   _.assert( _.strIs( o.routineName ) );
+//
+//   return o;
+// }
+
+//
+
+function join_body( o )
+{
+  let self = this;
+  let parent = self.path;
+  let isGlobal = false;
+
+  /* */
+
+  let srcs = pathsParseAtomicAndSetIsGlobal( o.args );
+  let result = resultMapMake( srcs );
+
+  if( !isGlobal )
+  return result.resourcePath;
+
+  if( ( result.hash || result.tag ) && result.longPath )
+  result.longPath = parent.detrail( result.longPath );
+
+  return self.str( result );
+
+  /* */
+
+  function pathsParseAtomicAndSetIsGlobal( args )
+  {
+    let result = _.arrayMake( args.length );
+
+    for( let s = 0 ; s < args.length ; s++ )
+    {
+      if( args[ s ] !== null && self.isGlobal( args[ s ] ) )
+      {
+        isGlobal = true;
+        result[ s ] = self.parseAtomic( args[ s ] );
+      }
+      else
+      {
+        isGlobal = args[ s ] !== null;
+        result[ s ] = { resourcePath : args[ s ] };
+      }
+    }
+
+    return result;
+  }
+
+  /* */
+
+  function resultMapMake( srcs )
+  {
+    let result = Object.create( null );
+    result.resourcePath = undefined;
+
+    for( let s = srcs.length - 1 ; s >= 0 ; s-- )
+    {
+      let src = srcs[ s ];
+      let hostWas = result.host;
+
+      if( result.protocol && src.protocol )
+      if( result.protocol !== src.protocol )
+      continue;
+
+      if( !result.protocol && src.protocol !== undefined )
+      result.protocol = src.protocol;
+
+      if( !result.user && src.user !== undefined )
+      result.user = src.user;
+
+      if( !result.host && src.host !== undefined )
+      result.host = src.host;
+
+      if( !result.port && src.port !== undefined )
+      if( !hostWas || !src.host || hostWas === src.host )
+      result.port = src.port;
+
+      if( !result.resourcePath && src.resourcePath !== undefined )
+      result.resourcePath = src.resourcePath;
+      else if( src.resourcePath )
+      result.resourcePath = parent[ o.routineName ]( src.resourcePath, result.resourcePath );
+
+      if( src.resourcePath === null )
+      break;
+
+      if( src.query !== undefined )
+      if( !result.query )
+      result.query = src.query;
+      else
+      result.query = src.query + '&' + result.query;
+
+      if( !result.hash && src.hash !==undefined )
+      result.hash = src.hash;
+
+      if( !result.tag && src.tag !==undefined )
+      result.tag = src.tag;
+    }
+
+    return result;
+  }
+}
+
+join_body.defaults =
+{
+  routineName : 'join',
+  args : null,
+};
+
+//
+
+let join_ = _.routineUnite( Parent.join_.head, join_body );
+
 /**
  * @summary Joins a sequence of paths into single web uri.
  * @param {...String} path Source paths.
@@ -86,6 +209,11 @@ let join = Parent.join_functor( 'join', 1 );
  */
 
 let joinRaw = Parent.join_functor( 'joinRaw', 1 );
+
+//
+
+let joinRaw_ = _.routineUnite( Parent.joinRaw_.head, join_body );
+joinRaw_.defaults.routineName = 'joinRaw';
 
 //
 
@@ -179,6 +307,7 @@ function resolve()
   let parent = this.path;
   let joined = this.join.apply( this, arguments );
   let parsed = this.parseAtomic( joined );
+  if( parsed.resourcePath )
   parsed.resourcePath = parent.resolve( parsed.resourcePath );
   return this.str( parsed );
 }
@@ -209,7 +338,9 @@ let Routines =
   isAbsolute,
 
   join,
+  join_, /* !!! : use instead of join */ /* Dmytro : separate implementation, it has less if branches */
   joinRaw,
+  joinRaw_, /* !!! : use instead of joinRaw */ /* Dmytro : separate implementation, it has less if branches */
   // urisJoin,
 
   resolve,
