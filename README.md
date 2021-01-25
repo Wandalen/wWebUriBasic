@@ -8,7 +8,7 @@ Collection of cross-platform routines to operate web URIs ( URLs ) in the reliab
 git clone https://github.com/Wandalen/wWebUriBasic
 cd wWebUriBasic
 npm install
-node sample/Sample.s
+node sample/trivial/Sample.s
 ```
 
 ## To add to your project
