@@ -170,10 +170,10 @@ function join_body( o )
       break;
 
       if( src.query !== undefined )
-      if( !result.query )
-      result.query = src.query;
-      else
+      if( result.query )
       result.query = src.query + '&' + result.query;
+      else
+      result.query = src.query;
 
       if( !result.hash && src.hash !==undefined )
       result.hash = src.hash;
