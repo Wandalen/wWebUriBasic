@@ -284,7 +284,7 @@ function join( test )
   test.case = 'several queries and hashes'
   var uri1 = '://user:pass@sub.host.com:8080/p/a/t/h?query1=string1#hash1';
   var uri2 = '://user:pass@sub.host.com:8080/p/a/t/h?query2=string2#hash2';
-  var got = _.weburi.join( uri1, uri2, '/x//y//z'  );
+  var got = _.weburi.join( uri1, uri2, '/x//y//z' );
   var expected = '://user:pass@sub.host.com:8080//x//y//z?query1=string1&query2=string2#hash2';
   test.identical( got, expected );
 
@@ -293,42 +293,42 @@ function join( test )
   test.identical( got, '://some.domain.com//something/to/add' );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join( uri, 'x'  );
+  var got = _.weburi.join( uri, 'x' );
   var expected = '://user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join( uri, 'x', '/y'  );
+  var got = _.weburi.join( uri, 'x', '/y' );
   var expected = '://user:pass@sub.host.com:8080//y?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join( uri, '/x//y//z'  );
+  var got = _.weburi.join( uri, '/x//y//z' );
   var expected = '://user:pass@sub.host.com:8080//x//y//z?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p//a//t//h?query=string#hash';
-  var got = _.weburi.join( uri, 'x'  );
+  var got = _.weburi.join( uri, 'x' );
   var expected = '://user:pass@sub.host.com:8080/p//a//t//h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join( uri, 'x'  );
+  var got = _.weburi.join( uri, 'x' );
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join( uri, 'x', '/y'  );
+  var got = _.weburi.join( uri, 'x', '/y' );
   var expected = ':///user:pass@sub.host.com:8080//y?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join( uri, '/x//y//z'  );
+  var got = _.weburi.join( uri, '/x//y//z' );
   var expected = ':///user:pass@sub.host.com:8080//x//y//z?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join( uri, 'x'  );
+  var got = _.weburi.join( uri, 'x' );
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
@@ -369,17 +369,17 @@ function join( test )
 
   /* xxx */
 
-  var paths = [  '/aa', 'bb//', 'cc' ];
+  var paths = [ '/aa', 'bb//', 'cc' ];
   var expected = '/aa/bb//cc';
   var got = _.weburi.join.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  var paths = [  '/aa', 'bb//', 'cc', '.' ];
+  var paths = [ '/aa', 'bb//', 'cc', '.' ];
   var expected = '/aa/bb//cc';
   var got = _.weburi.join.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  var paths = [  '/', 'a', '//b', '././c', '../d', '..e' ];
+  var paths = [ '/', 'a', '//b', '././c', '../d', '..e' ];
   var expected = '//b/d/..e';
   var got = _.weburi.join.apply( _.weburi, paths );
   test.identical( got, expected );
@@ -670,7 +670,7 @@ function join_( test )
   test.case = 'several queries and hashes'
   var uri1 = '://user:pass@sub.host.com:8080/p/a/t/h?query1=string1#hash1';
   var uri2 = '://user:pass@sub.host.com:8080/p/a/t/h?query2=string2#hash2';
-  var got = _.weburi.join_( uri1, uri2, '/x//y//z'  );
+  var got = _.weburi.join_( uri1, uri2, '/x//y//z' );
   var expected = '://user:pass@sub.host.com:8080//x//y//z?query1=string1&query2=string2#hash2';
   test.identical( got, expected );
 
@@ -679,42 +679,42 @@ function join_( test )
   test.identical( got, '://some.domain.com//something/to/add' );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join_( uri, 'x'  );
+  var got = _.weburi.join_( uri, 'x' );
   var expected = '://user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join_( uri, 'x', '/y'  );
+  var got = _.weburi.join_( uri, 'x', '/y' );
   var expected = '://user:pass@sub.host.com:8080//y?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join_( uri, '/x//y//z'  );
+  var got = _.weburi.join_( uri, '/x//y//z' );
   var expected = '://user:pass@sub.host.com:8080//x//y//z?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p//a//t//h?query=string#hash';
-  var got = _.weburi.join_( uri, 'x'  );
+  var got = _.weburi.join_( uri, 'x' );
   var expected = '://user:pass@sub.host.com:8080/p//a//t//h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join_( uri, 'x'  );
+  var got = _.weburi.join_( uri, 'x' );
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join_( uri, 'x', '/y'  );
+  var got = _.weburi.join_( uri, 'x', '/y' );
   var expected = ':///user:pass@sub.host.com:8080//y?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join_( uri, '/x//y//z'  );
+  var got = _.weburi.join_( uri, '/x//y//z' );
   var expected = ':///user:pass@sub.host.com:8080//x//y//z?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.join_( uri, 'x'  );
+  var got = _.weburi.join_( uri, 'x' );
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
@@ -753,17 +753,17 @@ function join_( test )
 
   test.case = 'more complicated cases';
 
-  var paths = [  '/aa', 'bb//', 'cc' ];
+  var paths = [ '/aa', 'bb//', 'cc' ];
   var expected = '/aa/bb//cc';
   var got = _.weburi.join_.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  var paths = [  '/aa', 'bb//', 'cc', '.' ];
+  var paths = [ '/aa', 'bb//', 'cc', '.' ];
   var expected = '/aa/bb//cc';
   var got = _.weburi.join_.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  var paths = [  '/', 'a', '//b', '././c', '../d', '..e' ];
+  var paths = [ '/', 'a', '//b', '././c', '../d', '..e' ];
   var expected = '//b/d/..e';
   var got = _.weburi.join_.apply( _.weburi, paths );
   test.identical( got, expected );
@@ -1027,7 +1027,7 @@ function joinRaw( test )
   test.case = 'several queries and hashes'
   var uri1 = '://user:pass@sub.host.com:8080/p/a/t/h?query1=string1#hash1';
   var uri2 = '://user:pass@sub.host.com:8080/p/a/t/h?query2=string2#hash2';
-  var got = _.weburi.joinRaw( uri1, uri2, '/x//y//z'  );
+  var got = _.weburi.joinRaw( uri1, uri2, '/x//y//z' );
   var expected = '://user:pass@sub.host.com:8080//x//y//z?query1=string1&query2=string2#hash2';
   test.identical( got, expected );
 
@@ -1036,42 +1036,42 @@ function joinRaw( test )
   test.identical( got, '://some.domain.com//something/to/add' );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw( uri, 'x'  );
+  var got = _.weburi.joinRaw( uri, 'x' );
   var expected = '://user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw( uri, 'x', '/y'  );
+  var got = _.weburi.joinRaw( uri, 'x', '/y' );
   var expected = '://user:pass@sub.host.com:8080//y?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw( uri, '/x//y//z'  );
+  var got = _.weburi.joinRaw( uri, '/x//y//z' );
   var expected = '://user:pass@sub.host.com:8080//x//y//z?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p//a//t//h?query=string#hash';
-  var got = _.weburi.joinRaw( uri, 'x'  );
+  var got = _.weburi.joinRaw( uri, 'x' );
   var expected = '://user:pass@sub.host.com:8080/p//a//t//h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw( uri, 'x'  );
+  var got = _.weburi.joinRaw( uri, 'x' );
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw( uri, 'x', '/y'  );
+  var got = _.weburi.joinRaw( uri, 'x', '/y' );
   var expected = ':///user:pass@sub.host.com:8080//y?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw( uri, '/x//y//z'  );
+  var got = _.weburi.joinRaw( uri, '/x//y//z' );
   var expected = ':///user:pass@sub.host.com:8080//x//y//z?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw( uri, 'x'  );
+  var got = _.weburi.joinRaw( uri, 'x' );
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
@@ -1112,22 +1112,22 @@ function joinRaw( test )
 
   /* xxx */
 
-  var paths = [  '/aa', 'bb//', 'cc' ];
+  var paths = [ '/aa', 'bb//', 'cc' ];
   var expected = '/aa/bb//cc';
   var got = _.weburi.joinRaw.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  var paths = [  '/aa', 'bb//', 'cc', '.' ];
+  var paths = [ '/aa', 'bb//', 'cc', '.' ];
   var expected = '/aa/bb//cc/.';
   var got = _.weburi.joinRaw.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  var paths = [  '/aa', 'bb//', 'cc', '.' ];
+  var paths = [ '/aa', 'bb//', 'cc', '.' ];
   var expected = '/aa/bb//cc/.';
   var got = _.weburi.joinRaw.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  var paths = [  '/', 'a', '//b', '././c', '../d', '..e' ];
+  var paths = [ '/', 'a', '//b', '././c', '../d', '..e' ];
   var expected = '//b/././c/../d/..e';
   var got = _.weburi.joinRaw.apply( _.weburi, paths );
   test.identical( got, expected );
@@ -1392,7 +1392,7 @@ function joinRaw_( test )
   test.case = 'several queries and hashes'
   var uri1 = '://user:pass@sub.host.com:8080/p/a/t/h?query1=string1#hash1';
   var uri2 = '://user:pass@sub.host.com:8080/p/a/t/h?query2=string2#hash2';
-  var got = _.weburi.joinRaw_( uri1, uri2, '/x//y//z'  );
+  var got = _.weburi.joinRaw_( uri1, uri2, '/x//y//z' );
   var expected = '://user:pass@sub.host.com:8080//x//y//z?query1=string1&query2=string2#hash2';
   test.identical( got, expected );
 
@@ -1401,42 +1401,42 @@ function joinRaw_( test )
   test.identical( got, '://some.domain.com//something/to/add' );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw_( uri, 'x'  );
+  var got = _.weburi.joinRaw_( uri, 'x' );
   var expected = '://user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw_( uri, 'x', '/y'  );
+  var got = _.weburi.joinRaw_( uri, 'x', '/y' );
   var expected = '://user:pass@sub.host.com:8080//y?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw_( uri, '/x//y//z'  );
+  var got = _.weburi.joinRaw_( uri, '/x//y//z' );
   var expected = '://user:pass@sub.host.com:8080//x//y//z?query=string#hash'
   test.identical( got, expected );
 
   var uri = '://user:pass@sub.host.com:8080/p//a//t//h?query=string#hash';
-  var got = _.weburi.joinRaw_( uri, 'x'  );
+  var got = _.weburi.joinRaw_( uri, 'x' );
   var expected = '://user:pass@sub.host.com:8080/p//a//t//h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw_( uri, 'x'  );
+  var got = _.weburi.joinRaw_( uri, 'x' );
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw_( uri, 'x', '/y'  );
+  var got = _.weburi.joinRaw_( uri, 'x', '/y' );
   var expected = ':///user:pass@sub.host.com:8080//y?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw_( uri, '/x//y//z'  );
+  var got = _.weburi.joinRaw_( uri, '/x//y//z' );
   var expected = ':///user:pass@sub.host.com:8080//x//y//z?query=string#hash'
   test.identical( got, expected );
 
   var uri = ':///user:pass@sub.host.com:8080/p/a/t/h?query=string#hash';
-  var got = _.weburi.joinRaw_( uri, 'x'  );
+  var got = _.weburi.joinRaw_( uri, 'x' );
   var expected = ':///user:pass@sub.host.com:8080/p/a/t/h/x?query=string#hash'
   test.identical( got, expected );
 
@@ -1477,22 +1477,22 @@ function joinRaw_( test )
 
   /* xxx */
 
-  var paths = [  '/aa', 'bb//', 'cc' ];
+  var paths = [ '/aa', 'bb//', 'cc' ];
   var expected = '/aa/bb//cc';
   var got = _.weburi.joinRaw_.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  var paths = [  '/aa', 'bb//', 'cc', '.' ];
+  var paths = [ '/aa', 'bb//', 'cc', '.' ];
   var expected = '/aa/bb//cc/.';
   var got = _.weburi.joinRaw_.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  var paths = [  '/aa', 'bb//', 'cc', '.' ];
+  var paths = [ '/aa', 'bb//', 'cc', '.' ];
   var expected = '/aa/bb//cc/.';
   var got = _.weburi.joinRaw_.apply( _.weburi, paths );
   test.identical( got, expected );
 
-  var paths = [  '/', 'a', '//b', '././c', '../d', '..e' ];
+  var paths = [ '/', 'a', '//b', '././c', '../d', '..e' ];
   var expected = '//b/././c/../d/..e';
   var got = _.weburi.joinRaw_.apply( _.weburi, paths );
   test.identical( got, expected );
@@ -1687,10 +1687,10 @@ function resolve( test )
   var got = _.weburi.resolve( 'https://web.archive.org/web/*\/http://www.heritage.org/index/ranking', '../../../a.com' );
   test.identical( got, 'https://web.archive.org//web/*\/http://a.com' )
 
-  var got = _.weburi.resolve( '127.0.0.1:61726', '../path'  );
+  var got = _.weburi.resolve( '127.0.0.1:61726', '../path' );
   test.identical( got, 'path' );
 
-  var got = _.weburi.resolve( 'http://127.0.0.1:61726', '../path'  );
+  var got = _.weburi.resolve( 'http://127.0.0.1:61726', '../path' );
   test.identical( got, 'http://127.0.0.1:61726//../path' );
 
   /* */
@@ -1705,63 +1705,63 @@ function resolve( test )
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '/baz//foo' );
 
-  var paths = [  'aa', '.', 'cc' ];
+  var paths = [ 'aa', '.', 'cc' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, 'aa//cc' );
 
-  var paths = [  'aa', 'cc', '.' ];
+  var paths = [ 'aa', 'cc', '.' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, 'aa//cc' );
 
-  var paths = [  '.', 'aa', 'cc' ];
+  var paths = [ '.', 'aa', 'cc' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, './/aa/cc' );
 
-  var paths = [  '.', 'aa', 'cc', '..' ];
+  var paths = [ '.', 'aa', 'cc', '..' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, './/aa' );
 
-  var paths = [  '.', 'aa', 'cc', '..', '..' ];
+  var paths = [ '.', 'aa', 'cc', '..', '..' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '.' );
 
-  var paths = [  'aa', 'cc', '..', '..', '..' ];
+  var paths = [ 'aa', 'cc', '..', '..', '..' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '..' );
 
-  var paths = [  '.x.', 'aa', 'bb', '.x.' ];
+  var paths = [ '.x.', 'aa', 'bb', '.x.' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '.x.//aa/bb/.x.' );
 
-  var paths = [  '..x..', 'aa', 'bb', '..x..' ];
+  var paths = [ '..x..', 'aa', 'bb', '..x..' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '..x..//aa/bb/..x..' );
 
-  var paths = [  '/abc', './../a/b' ];
+  var paths = [ '/abc', './../a/b' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '/a//b' );
 
-  var paths = [  '/abc', 'a/.././a/b' ];
+  var paths = [ '/abc', 'a/.././a/b' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '/abc//a/b' );
 
-  var paths = [  '/abc', '.././a/b' ];
+  var paths = [ '/abc', '.././a/b' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '/a//b' );
 
-  var paths = [  '/abc', './.././a/b' ];
+  var paths = [ '/abc', './.././a/b' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '/a//b' );
 
-  var paths = [  '/abc', './../.' ];
+  var paths = [ '/abc', './../.' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '/' );
 
-  var paths = [  '/abc', './../../.' ];
+  var paths = [ '/abc', './../../.' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '/..' );
 
-  var paths = [  '/abc', './../.' ];
+  var paths = [ '/abc', './../.' ];
   var got = _.weburi.resolve.apply( _.weburi, paths );
   test.identical( got, '/' );
 }
