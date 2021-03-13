@@ -194,7 +194,7 @@ join_body.defaults =
 
 //
 
-let join_ = _.routineUnite( Parent.join_.head, join_body );
+let join_ = _.routine.uniteCloning_( Parent.join_.head, join_body );
 
 /**
  * @summary Joins a sequence of paths into single web uri.
@@ -212,7 +212,7 @@ let joinRaw = Parent.join_functor( 'joinRaw', 1 );
 
 //
 
-let joinRaw_ = _.routineUnite( Parent.joinRaw_.head, join_body );
+let joinRaw_ = _.routine.uniteCloning_( Parent.joinRaw_.head, join_body );
 joinRaw_.defaults.routineName = 'joinRaw';
 
 //
