@@ -27,10 +27,10 @@ if( typeof module !== 'undefined' )
 
 //
 
-let _global = _global_;
-let _ = _global_.wTools;
-let Parent = _.uri;
-let Self = _.weburi = _.weburi || Object.create( Parent );
+const _global = _global_;
+const _ = _global_.wTools;
+const Parent = _.uri;
+const Self = _.weburi = _.weburi || Object.create( Parent );
 
 // --
 //
