@@ -80,8 +80,8 @@ path:
       raw: compiled
       content: prime
   npm.proto.entry:
-    - /pro/module/wWebUriBasic/proto/wtools/abase/l5/WebUri.s
-    - /pro/module/wWebUriBasic/proto/node_modules/wweburibasic
+    - proto/wtools/abase/l5/WebUri.s
+    - proto/node_modules/wweburibasic
 reflector:
   reflect.proto:
     inherit: predefined.*
