@@ -82,7 +82,7 @@ let join = Parent.join_functor( 'join', 1 );
 //   else
 //   _.assert( args.length === 1, 'Expects single options map {-o-}' );
 //
-//   _.routineOptions( routine, o );
+//   _.routine.options_( routine, o );
 //   _.assert( _.strIs( o.routineName ) );
 //
 //   return o;
@@ -113,7 +113,7 @@ function join_body( o )
 
   function pathsParseAtomicAndSetIsGlobal( args )
   {
-    let result = _.arrayMake( args.length );
+    let result = _.array.make( args.length );
 
     for( let s = 0 ; s < args.length ; s++ )
     {
@@ -194,7 +194,7 @@ join_body.defaults =
 
 //
 
-let join_ = _.routine.uniteCloning_( Parent.join_.head, join_body );
+let join_ = _.routine.uniteCloning_replaceByUnite( Parent.join_.head, join_body );
 
 /**
  * @summary Joins a sequence of paths into single web uri.
@@ -212,7 +212,7 @@ let joinRaw = Parent.join_functor( 'joinRaw', 1 );
 
 //
 
-let joinRaw_ = _.routine.uniteCloning_( Parent.joinRaw_.head, join_body );
+let joinRaw_ = _.routine.uniteCloning_replaceByUnite( Parent.joinRaw_.head, join_body );
 joinRaw_.defaults.routineName = 'joinRaw';
 
 //
