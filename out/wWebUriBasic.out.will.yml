@@ -2,12 +2,9 @@ format: outwillfile-2.0
 root:
   - wWebUriBasic.out
 consistency:
-  ../.ex.will.yml: &ref_0
-    hash: e94fb7ad985925a7f26d7e29ffd97ec1
-    size: 2076
-  ../.im.will.yml: &ref_1
-    hash: a7a175a8ca9d30b5dec1efcab63e9ccb
-    size: 5021
+  ../will.yml: &ref_0
+    hash: e4aeba8f06ba27c38e86586a4043b2e8
+    size: 6883
 module:
   wWebUriBasic.out:
     about:
@@ -22,18 +19,18 @@ module:
         experience from playing with paths on different platforms.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      license: MIT
+      npm.name: wweburibasic
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: &ref_1
+        - wTools
+      contributors: &ref_2
+        - Kostiantyn Wandalen <wanalen@01.school>
+      interpreters: &ref_3
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
-        - wTools
-      license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
-        - Kostiantyn Wandalen <wanalen@01.school>
-      npm.name: wweburibasic
-      npm.scripts: &ref_5
+      npm.scripts: &ref_4
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -48,15 +45,11 @@ module:
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.in:
         criterion:
           predefined: 1
@@ -179,7 +172,7 @@ module:
         path: 'npm:///wTools'
         autoExporting: 0
         enabled: 0
-      wUriBasic:
+      wuribasic:
         path: 'npm:///wuribasic'
         autoExporting: 0
         enabled: 0
@@ -194,7 +187,7 @@ module:
         autoExporting: 0
         enabled: 0
         criterion:
-          debug: 1
+          development: 1
       wTesting:
         path: 'npm:///wTesting'
         autoExporting: 0
@@ -796,8 +789,7 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      ../will.yml: *ref_0
   ../:
     about:
       name: wWebUriBasic
@@ -811,26 +803,22 @@ module:
         experience from playing with paths on different platforms.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
       license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
       npm.name: wweburibasic
-      npm.scripts: *ref_5
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: *ref_1
+      contributors: *ref_2
+      interpreters: *ref_3
+      npm.scripts: *ref_4
     path:
       module.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
@@ -936,7 +924,7 @@ module:
         path: 'npm:///wTools'
         autoExporting: 0
         enabled: 0
-      wUriBasic:
+      wuribasic:
         path: 'npm:///wuribasic'
         autoExporting: 0
         enabled: 0
@@ -951,7 +939,7 @@ module:
         autoExporting: 0
         enabled: 0
         criterion:
-          debug: 1
+          development: 1
       wTesting:
         path: 'npm:///wTesting'
         autoExporting: 0
@@ -1489,9 +1477,6 @@ module:
           - 'build::release'
           - 'build::npm'
     consistency:
-      ../.ex.will.yml:
-        hash: e94fb7ad985925a7f26d7e29ffd97ec1
-        size: 2076
-      ../.im.will.yml:
-        hash: a7a175a8ca9d30b5dec1efcab63e9ccb
-        size: 5021
+      ../will.yml:
+        hash: e4aeba8f06ba27c38e86586a4043b2e8
+        size: 6883
