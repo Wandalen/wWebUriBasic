@@ -320,19 +320,10 @@ function resolve()
 // });
 
 // --
-// declare Fields
+// extension
 // --
 
-let Fields =
-{
-  single : Self,
-}
-
-// --
-// declare routines
-// --
-
-let Routines =
+let Extension =
 {
 
   isAbsolute,
@@ -346,10 +337,13 @@ let Routines =
   resolve,
   // urisResolve,
 
+  // extension
+
+  single : Self,
+
 }
 
-_.mapExtendDstNotOwn( Self, Fields );
-_.mapExtendDstNotOwn( Self, Routines );
+_.mapExtendDstNotOwn( Self, Extension );
 
 Self.Init();
 
