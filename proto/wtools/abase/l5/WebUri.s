@@ -223,6 +223,16 @@ joinRaw_.defaults.routineName = 'joinRaw';
 // });
 
 //
+
+function current()
+{
+  _.assert( arguments.length === 0, 'Expects no arguments.' );
+  return this.upToken;
+}
+
+//
+
+//
 //
 // function resolve()
 // {
@@ -337,6 +347,8 @@ let Extension =
   joinRaw,
   joinRaw_, /* !!! : use instead of joinRaw */ /* Dmytro : separate implementation, it has less if branches */
   // urisJoin,
+
+  current,
 
   resolve,
   // urisResolve,
