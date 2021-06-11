@@ -286,6 +286,8 @@ joinRaw_.defaults.routineName = 'joinRaw';
 //   return this.str( result );
 // }
 
+//
+
 /**
  * @summary Resolves a sequence of paths or path segments into web uri.
  * @description
@@ -304,12 +306,14 @@ joinRaw_.defaults.routineName = 'joinRaw';
 
 function resolve()
 {
-  let parent = this.path;
-  let joined = this.join.apply( this, arguments );
-  let parsed = this.parseAtomic( joined );
+  let self = this;
+  let parent = self.path;
+  let joined = self.join.apply( self, arguments );
+  let parsed = self.parseAtomic( joined );
   if( parsed.resourcePath )
-  parsed.resourcePath = parent.resolve( parsed.resourcePath );
-  return this.str( parsed );
+  parsed.resourcePath = parent.resolve.call( self, parsed.resourcePath );
+  // parsed.resourcePath = parent.resolve( parsed.resourcePath ); /* Dmytro : the context of resolving should be a WebUri, not Path */
+  return self.str( parsed );
 }
 
 //
