@@ -1,6 +1,6 @@
 {
   "name": "wweburibasic",
-  "version": "0.3.209",
+  "version": "0.3.210",
   "description": "Collection of cross-platform routines to operate web URIs ( URLs ) in the reliable and consistent way. Module WebUri extends Uri module to handle host and port parts of URI in a way appropriate for world wide web resources. This module leverages parsing, joining, extracting, normalizing, nativizing, resolving paths. Use the module to get uniform experience from playing with paths on different platforms.",
   "author": "Kostiantyn Wandalen <wanalen@01.school>",
   "license": "MIT",
