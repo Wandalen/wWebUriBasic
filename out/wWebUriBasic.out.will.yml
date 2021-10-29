@@ -3,8 +3,8 @@ root:
   - wWebUriBasic.out
 consistency:
   ../will.yml: &ref_0
-    hash: e4aeba8f06ba27c38e86586a4043b2e8
-    size: 6883
+    hash: ef22f0b4ba17aa00a0e0ae860c92e9ae
+    size: 6742
 module:
   wWebUriBasic.out:
     about:
@@ -375,9 +375,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -713,12 +710,6 @@ module:
           - 'step::doc.export'
         criterion:
           content: doc
-          export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
           export: 1
       export:
         steps:
@@ -1076,9 +1067,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -1415,12 +1403,6 @@ module:
         criterion:
           content: doc
           export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
-          export: 1
       export:
         steps:
           - 'build::proto.export'
@@ -1478,5 +1460,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: e4aeba8f06ba27c38e86586a4043b2e8
-        size: 6883
+        hash: ef22f0b4ba17aa00a0e0ae860c92e9ae
+        size: 6742
