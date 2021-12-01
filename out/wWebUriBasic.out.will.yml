@@ -3,8 +3,8 @@ root:
   - wWebUriBasic.out
 consistency:
   ../will.yml: &ref_0
-    hash: ef22f0b4ba17aa00a0e0ae860c92e9ae
-    size: 6742
+    hash: 674e7000ed9232f72945e4607d4aa76f
+    size: 6750
 module:
   wWebUriBasic.out:
     about:
@@ -1460,5 +1460,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: ef22f0b4ba17aa00a0e0ae860c92e9ae
-        size: 6742
+        hash: 674e7000ed9232f72945e4607d4aa76f
+        size: 6750
